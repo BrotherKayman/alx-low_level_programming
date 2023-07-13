@@ -2,6 +2,7 @@
 
 /**
 *Program that prints using puts function
+*return 0
 */
 
 int main(void)
