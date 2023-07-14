@@ -5,12 +5,12 @@
  */
 int main(void)
 {
-  int alph = 97;
-  while (alph <= 122)
+int alph = 97;
+while (alph <= 122)
 {
 putchar(alph);
 alph++;
 }
-  putchar('\n');
+putchar('\n');
 return (0);
 }
