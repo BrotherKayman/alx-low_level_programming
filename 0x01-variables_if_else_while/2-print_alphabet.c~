@@ -1,0 +1,15 @@
+#include <stdio.h>
+/**
+ * main - Program will print a - z in lowercase
+ * Return: 0 on success
+ */
+int main(void)
+{
+  while (int alph = 97, alph <= 122)
+{
+putchar(alph);
+alph++;
+}
+  putchar('\n');
+return (0);
+}
