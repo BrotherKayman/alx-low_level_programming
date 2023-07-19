@@ -1,9 +1,10 @@
 #include "main.h"
+#include <unistd.h>
 /**
- * main - Print using putchar
+ * main - Print using _putchar
  * Return: 0 on success
  */
-int main(void)
+int main()
 {
 _putchar('_');
 _putchar('p');
