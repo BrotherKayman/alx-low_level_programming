@@ -1,15 +1,22 @@
+#include <unistd.h>
 #include "main.h"
 /**
- * main - check the code
+ * print_alphabet - check the code
  *
- * Return: Always 0.
+ * Return: Always 0
  */
-void print_alphabet(void)
-  alph++;
+int main(void)
 {
-  int alph = 97;
-  while (alph <= 122)
-    {
-    print_alphabet();
-    return (0);
+  print_alphabet();
+  return (0);
+}
+
+#include "main.h"
+
+void print_alphabet(void) {
+  char c;
+  for (c = 'a'; c <= 'z'; c++) {
+        _putchar(c);
+    }
+    _putchar('\n');
 }
