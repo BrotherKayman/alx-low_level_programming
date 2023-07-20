@@ -15,6 +15,6 @@ else
 {
 n = ((r % 10) * -1);
 }
-_putchar('0' + r);
+_putchar(r + '0');
 return(n);
 }
