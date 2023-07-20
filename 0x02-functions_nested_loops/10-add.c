@@ -1,0 +1,11 @@
+#include "main.h"
+/**
+ * add - Adds two numbers and prints result
+ * @x: integer input
+ * @y: integer input
+ * Return: 0 Always
+ */
+int add(int x, int y)
+{
+return (x + y);
+}
