@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _jack_bauer - Prints time
+ * jack_bauer - Prints time
  * Return: 0 Always
  */
 void jack_bauer(void)
