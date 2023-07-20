@@ -4,7 +4,7 @@
  * Generate Fibonacci numbers and calculate sum of even numbers
  * Return: 0 on success
  */
-int main()
+int main(void)
 {
 unsigned long prevFib = 1;
 unsigned long currFib = 2;
@@ -16,13 +16,12 @@ tempVar = currFib;
 currFib += prevFib;
 prevFib = tempVar;
 if (currFib % 2 == 0 && currFib <= 4000000)
-{
 sum += currFib;
-}
-else if (currFib > 4000000) {
+else if (currFib > 4000000)
+{
 break;
 }
 }
-printf("Sum: %lu\n", sum);
+printf("%lu\n", sum);
 return (0);
 }
