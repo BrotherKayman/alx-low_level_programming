@@ -3,7 +3,7 @@
  * _jack_bauer - Prints time
  * Return: 0 Always
  */
-void _jack_bauer(void)
+void jack_bauer(void)
 {
 int hour, minute;
 for (hour = 0; hour < 24; hour++)
