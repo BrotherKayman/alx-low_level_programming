@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - Entry Point
- * program that computes and prints the sum of all the multiples of 3 or 5 below 1024 (excluded)
+ * Prints the sum of all the multiples of 3 or 5 below 1024 (excluded)
  * Return: 0 on Success;
  */
 int main(void)
