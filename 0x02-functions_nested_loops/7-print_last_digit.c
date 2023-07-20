@@ -2,8 +2,7 @@
 /**
  * print_last_digit - Prints last digit
  * @x: reads digits
- * @n: checks last digit
- * Return: the value of the last digit
+ * Return: The last digit of the number
  */
 int print_last_digit(int x)
 {
