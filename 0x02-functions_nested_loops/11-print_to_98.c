@@ -11,27 +11,19 @@ if (n <= 98)
 {
 while (n < 98)
 {
-_putchar(n / 100 + '0');
-_putchar((n / 10) % 10 + '0');
-_putchar(n % 10 + '0');
-_putchar(',');
-_putchar(' ');
-n++;
+  printf("%d", n++)
+  printf(",");
+  printf(" ");
 }
+printf("%d\n", n);
 }
 else
 {
-while (n > 98)
+while (n >= 98)
 {
-_putchar(n / 100 + '0');
-_putchar((n / 10) % 10 + '0');
-_putchar(n % 10 + '0');
-_putchar(',');
-_putchar(' ');
-n--;
+  printf("%d", n--);
+  printf(",");
+  printf(" ");
 }
-}
-_putchar('9');
-_putchar('8');
-_putchar('\n');
+printf("%d\n", n);
 }

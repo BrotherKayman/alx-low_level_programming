@@ -3,7 +3,13 @@
  * main - Print first 98 Fibonacci numbers starting with 1 and 2
  * Return: 0 on Success
  */
-int main(void)
+/*
+ * preFib - Previous Fibonacci number
+ * currFib - Current Fibonacci number
+ * tempVar - Temporary variable to store the sum of prev and curr
+ * x - Counter for the number of Fibonacci numbers generated (already including 1 and 2)
+*/
+int main()
 {
 unsigned long prevFib = 1;
 unsigned long currFib = 2;
@@ -15,7 +21,7 @@ while (x < 98)
 tempVar = currFib;
 currFib += prevFib;
 prevFib = tempVar;
-printf(", %lu", currFib % 4201961407274896);
+printf(", %lu", currFib);
 x++;
 }
 printf("\n");
