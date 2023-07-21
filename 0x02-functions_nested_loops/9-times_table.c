@@ -1,29 +1,26 @@
 #include "main.h"
+#include <stdio.h>
 /**
- * times_table - Prints the multiplication table from 0 to 9.
- * Return: 0 Always
+ * times_table - Function that prints the 9 times table.
+ * Return: result
  */
 void times_table(void)
 {
 int x, y, multiply;
 for (x = 0; x <= 9; x++)
 {
-_putchar('0');
-for (y = 1; y < 10; y++)
+for (y = 0; y <= 9; y++)
 {
-_putchar(',');
-_putchar(' ');
 multiply = x * y;
-if (multiply <= 9)
+if (y == 0)
 {
-_putchar(' ');
+printf("%d", multiply);
 }
 else
 {
-_putchar((multiply / 10) + '0');
-_putchar((multiply % 10) + '0');
+printf(", %2d", multiply);
 }
 }
-_putchar('\n');
+printf("\n");
 }
 }
