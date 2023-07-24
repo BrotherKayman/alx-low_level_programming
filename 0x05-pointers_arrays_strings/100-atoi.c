@@ -21,6 +21,4 @@ result = result * 10 + (*s++ - '0');
 }
 return (result *sign);
 }
-if (s == NULL)
-return (0);
 }
