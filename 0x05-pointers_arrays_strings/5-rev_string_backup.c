@@ -13,7 +13,8 @@ x++;
 }
 for (i = 0; i < x / 2; i++)
 {
-s[i] = s[x - 1 - i];
-s[x - 1 - i] = s[i];
+  char z = s[i];
+  s[i] = s[x - 1 - i];
+s[x - 1 - i] = z;
 }
 }
