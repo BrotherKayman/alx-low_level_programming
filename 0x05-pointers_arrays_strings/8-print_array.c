@@ -1,18 +1,17 @@
 #include <stdio.h>
-
-void print_array(int *a, int n) {
-  if (a == NULL || n <= 0) {
-    return; // If the array is NULL or n is not positive, just return
-  }
-
-  for (int i = 0; i < n; i++) {
-    printf("%d", a[i]);
-
-    // Print comma and space after all elements except the last one
-    if (i < n - 1) {
-      printf(", ");
-    }
-  }
-
-  printf("\n");
+/**
+* print_array - prints n elements of an array of integers
+* @n: array
+* @a: Points to an array
+*/
+void print_array(int *a, int n)
+{
+int x;
+for (x = 0; x < n; x++)
+{
+printf("%d", a[x]);
+if (x < n - 1)
+printf(", ");
+}
+printf("\n");
 }
