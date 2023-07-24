@@ -2,13 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 #define PASSWORD_LENGTH 8
-char random_char() {
+char random_char()
+{
 return (char)('!' + rand() % 94);
 }
 void generate_password(char *password)
 {
-srand(time(NULL));
-for (int i = 0; i < PASSWORD_LENGTH; i++)
+  int i;
+  srand(time(NULL));
+for (i = 0; i < PASSWORD_LENGTH; i++)
 {
 password[i] = random_char();
 }
