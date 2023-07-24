@@ -9,7 +9,7 @@ void generate_password(char *password)
 {
 srand(time(NULL));
 for (int i = 0; i < PASSWORD_LENGTH; i++)
-{
+  {
 password[i] = random_char();
 }
 }
