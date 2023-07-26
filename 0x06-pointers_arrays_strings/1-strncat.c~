@@ -1,21 +1,21 @@
 #include "main.h"
 /**
-* _strcat - This function appends the src string to the dest string
+* _strncat - This function adds at most n bytes from src to the end of dest.
 * @dest: String
 * @src: String
 * Return: dest
 */
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 char *ptr = dest;
 while (*ptr)
 ptr++;
-while (*src)
+while (*src && n > 0)
 {
 *ptr = *src;
 ptr++;
 src++;
+n--;
 }
-*ptr = '\0';
 return (dest);
 }
