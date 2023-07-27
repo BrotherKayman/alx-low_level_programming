@@ -7,18 +7,12 @@
 */
 char *cap_string(char *str)
 {
-int cap_next = 1;
+int cap_next;
 int i;
 for (i = 0; str[i] != '\0'; i++)
 {
-  if (str[i] == '\n')
-    {
-      continue;
-    }
-  if (isspace(str[i]) || ispunct(str[i]))
-{
+if (isspace(str[i]) || ispunct(str[i]))
 cap_next = 1;
-}
 else
 {
 if (cap_next)
