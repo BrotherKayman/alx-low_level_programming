@@ -1,0 +1,32 @@
+#include "main.h"
+#include <ctype.h>
+/**
+* cap_string - Function changes string to uppercase.
+* @str: Pointer to string
+* Return: str
+*/
+char *cap_string(char *str)
+{
+int cap_next = 1;
+int i;
+for (i = 0; str[i] != '\0'; i++)
+{
+if (str[i] == '\n')
+{
+continue;
+}
+if (isspace(str[i]) || ispunct(str[i]))
+{
+cap_next = 1;
+}
+else
+{
+if (cap_next)
+{
+str[i] = toupper(str[i]);
+cap_next = 0;
+}
+}
+}
+return (str);
+}

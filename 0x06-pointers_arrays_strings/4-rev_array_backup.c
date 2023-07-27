@@ -1,8 +1,8 @@
 /**
- * reverse_array - Function reverses the content of an array
- * @a: an array of integers
- * @n: the number of elements to swap
- */
+* reverse_array - Function reverses the content of an array
+* @a: an array of integers
+* @n: the number of elements to swap
+*/
 void reverse_array(int *a, int n)
 {
 int i, x;
