@@ -41,3 +41,4 @@ cap_next = 0;
 return (str);
 printf("\n");
 }
+
