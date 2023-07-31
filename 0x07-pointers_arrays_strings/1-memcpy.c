@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* _memcpy - Fills memory with a constant byte.
+* _memcpy - Copies memory area.
 * @dest: Pointer to character.
 * @src: POinter to char.
 * @n: Unsigned integer.
