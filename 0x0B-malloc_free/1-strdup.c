@@ -6,19 +6,19 @@
 * @s: Characters of a string
 * Return: NULL or duplicated string
 */
-char *_strdup(char *s)
+char *_strdup(char *str)
 {
 char *duplicate;
 size_t x;
-x = strlen(s) + 1;
-if (s == NULL)
+x = strlen(str) + 1;
+if (str == NULL)
 {
 return (NULL);
 }
 duplicate = (char *)malloc(x);
 if (duplicate != NULL)
 {
-strcpy(duplicate, s);
+strcpy(duplicate, str);
 }
 return (duplicate);
 }
