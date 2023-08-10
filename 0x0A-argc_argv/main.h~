@@ -1,0 +1,4 @@
+#ifndef
+#define MAIN_H
+char **strtow(char *str);
+#endif
