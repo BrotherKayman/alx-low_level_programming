@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+/**
+ * _abs - Compute the absolute value of an integer
+ * @n: The integer value
+ *
+ * Return: The absolute value of 'n'
+ */
+int _abs(int n)
+{
+  /* TODO: Implement the logic to compute the absolute value of 'n' */
+
+  return 0; /* Placeholder return value */
+}
+
+int main(void)
+{
+]  int num = -10;
+  int abs_num = _abs(num);
+
+  printf("The absolute value of %d is %d\n", num, abs_num);
+
+  return (0);
+}
