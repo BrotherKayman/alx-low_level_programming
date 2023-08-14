@@ -2,7 +2,8 @@
 #include <stdio.h>
 /**
  * print_dog - Prints details of struct dog.
- * If D is NULL, print nothing.
+ * @d: value
+ * Return: If D is NULL, print nothing.
  */
 void print_dog(struct dog *d)
 {
