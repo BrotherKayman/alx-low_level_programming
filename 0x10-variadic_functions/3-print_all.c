@@ -8,8 +8,8 @@
 void print_all(const char * const format, ...)
 {
 va_list args;
-va_start(args, format);
 const char *fmt = format;
+va_start(args, format);
 while (*fmt)
 {
 switch (*fmt)
