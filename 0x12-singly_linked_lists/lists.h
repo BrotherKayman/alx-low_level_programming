@@ -1,15 +1,14 @@
-#include <stdlib.h>
 #include <stddef.h>
 #ifndef LISTS_H
 #define LISTS_H
 
-struct list_t
+typedef struct list_s
 {
-  int data;
-  struct list_t *next;
-};
+  char *str;
+  int len;
+  struct list_s *next;
+} list_t;
 
-typedef struct list_t list_t;
 
 size_t print_list(const list_t *h);
 
