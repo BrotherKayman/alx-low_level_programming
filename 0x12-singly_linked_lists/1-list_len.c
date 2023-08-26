@@ -2,10 +2,10 @@
 #include <stddef.h>
 #include <stdio.h>
 /**
- * list_len - Counts length of list_t elements
- * @h: Points to the first node
- * Return: Number of elements in the list
- */
+* list_len - Counts length of list_t elements
+* @h: Points to the first node
+* Return: Number of elements in the list
+*/
 size_t list_len(const list_t *h)
 {
 size_t i = 0;
