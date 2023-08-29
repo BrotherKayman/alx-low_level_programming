@@ -12,7 +12,7 @@ if (head == NULL)
 {
 return;
 }
-while (*head != NULL)
+while (*head)
 {
 next = (*head)->next;
 free(*head);
