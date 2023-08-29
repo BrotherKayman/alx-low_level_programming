@@ -18,5 +18,5 @@ next = (*head)->next;
 free(*head);
 *head = next;
 }
-*head = NULL;
+head = NULL;
 }
