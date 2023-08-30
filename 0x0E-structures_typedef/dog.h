@@ -1,12 +1,16 @@
 #ifndef MAIN_H
 #define MAIN_H
 /**
- * dog - ...
- */
-struct dog {
-  char *name;
-  float age;
-  char *owner;
+* struct dog - ...
+* @name: ...
+* @age: ...
+* @owner: ...
+*/
+struct dog
+{
+char *name;
+float age;
+char *owner;
 };
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
