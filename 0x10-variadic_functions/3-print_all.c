@@ -2,49 +2,52 @@
 #include <stdio.h>
 #include <stdarg.h>
 /**
-* print_all - Prints strings, followed by a new line.
-* @format: string format
+* print_all - Prints various types of arguments.
+* @format: Format types from arguments.
 */
 void print_all(const char * const format, ...)
 {
 va_list args;
-const char *fmt = format;
+const char *ptr = format;
+char charc;
+int integ;
+float flt;
+char *str;
 va_start(args, format);
-while (*fmt)
+while (format && *ptr)
 {
-switch (*fmt)
+if (*ptr == 'c')
 {
-case 'c':
-printf("%c", va_arg(args, int));
-if (*(fmt + 1) != '\0')
-printf(", ");
-break;
-case 'i':
-printf("%d", va_arg(args, int));
-printf(", ");
-break;
-case 'f':
-printf("%f", va_arg(args, double));
-printf(", ");
-break;
-case 's':
-{
-char *s = va_arg(args, char *);
-if (s != NULL)
-{
-printf("%s", s);
+charc = va_arg(args, int);
+printf("%c", charc);
 }
-else
+else if (*ptr == 'i')
 {
-printf("(null)\n");
+integ = va_arg(args, int);
+printf("%d", integ);
+}
+else if (*ptr == 'f')
+{
+flt = va_arg(args, double);
+printf("%f", flt);
+}
+else if (*ptr == 's')
+{
+str = va_arg(args, char *);
+if (str == NULL)
+printf("(nil)");
+else
+printf("%s", str);
+}
+ptr++;
+if (*ptr)
+{
+while (*ptr != 'c' && *ptr != 'i' && *ptr != 'f' && *ptr != 's' && *ptr)
+ptr++;
+if (*ptr)
+printf(", ");
+}
 }
 printf("\n");
-}
-break;
-default:
-break;
-}
-fmt++;
-}
 va_end(args);
 }
