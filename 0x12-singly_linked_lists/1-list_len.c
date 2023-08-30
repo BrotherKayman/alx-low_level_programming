@@ -14,7 +14,6 @@ while (h != NULL)
 if (h->str == NULL)
 printf("[0] (nil)\n");
 else
-printf("[%d]\n", h->len);
 i++;
 h = h->next;
 }
