@@ -1,7 +1,8 @@
+#include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <fcntl.h>
+#include "main.h"
 #include <string.h>
 /**
 * create_file - Creates a file with the specified name and writes
