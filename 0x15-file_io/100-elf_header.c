@@ -14,12 +14,12 @@ void display_elf_header(const Elf64_Ehdr *header)
 int i;
 printf("Magic:\t");
 for (i = 0; i < EI_NIDENT; i++)
-printf("%02x ", header->e_ident[i]);
+printf("%02x \t", header->e_ident[i]);
 printf("\nClass: %s\t", header->e_ident[EI_CLASS]
 == ELFCLASS64 ? "ELF64" : "ELF32");
-printf("Data: %s\t", header->e_ident[EI_DATA]
+printf("Data:\t %s\t", header->e_ident[EI_DATA]
 == ELFDATA2LSB ? "2's complement, little endian" : "Unknown");
-printf("Version: %d (current)\t", header->e_ident[EI_VERSION]);
+printf("Version:\t %d (current)\n", header->e_ident[EI_VERSION]);
 printf("OS/ABI: %d\t", header->e_ident[EI_OSABI]);
 printf("ABI Version: %d\t", header->e_ident[EI_ABIVERSION]);
 printf("Type: %s\t", header->e_type == ET_EXEC ? "EXEC (Executable file)" :
