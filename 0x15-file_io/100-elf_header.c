@@ -12,20 +12,20 @@
 void display_elf_header(const Elf64_Ehdr *header)
 {
 int i;
-printf("Magic: ");
+printf("Magic:\t");
 for (i = 0; i < EI_NIDENT; i++)
 printf("%02x ", header->e_ident[i]);
-printf("\nClass: %s\n", header->e_ident[EI_CLASS]
+printf("\nClass: %s\t", header->e_ident[EI_CLASS]
 == ELFCLASS64 ? "ELF64" : "ELF32");
-printf("Data: %s\n", header->e_ident[EI_DATA]
+printf("Data: %s\t", header->e_ident[EI_DATA]
 == ELFDATA2LSB ? "2's complement, little endian" : "Unknown");
-printf("Version: %d (current)\n", header->e_ident[EI_VERSION]);
-printf("OS/ABI: %d\n", header->e_ident[EI_OSABI]);
-printf("ABI Version: %d\n", header->e_ident[EI_ABIVERSION]);
-printf("Type: %s\n", header->e_type == ET_EXEC ? "EXEC (Executable file)" :
+printf("Version: %d (current)\t", header->e_ident[EI_VERSION]);
+printf("OS/ABI: %d\t", header->e_ident[EI_OSABI]);
+printf("ABI Version: %d\t", header->e_ident[EI_ABIVERSION]);
+printf("Type: %s\t", header->e_type == ET_EXEC ? "EXEC (Executable file)" :
 (header->e_type == ET_DYN ? "DYN (Shared object file)" :
 (header->e_type == ET_REL ? "REL (Relocatable file)" : "Unknown")));
-printf("Entry point address: 0x%lx\n", (unsigned long)header->e_entry);
+printf("Entry point address: 0x%lx\t", (unsigned long)header->e_entry);
 }
 /**
 * main - Entry Point
