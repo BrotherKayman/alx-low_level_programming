@@ -1,0 +1,43 @@
+#include "shell.h"
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+/**
+* main - Entry point
+*
+* Return: Always 0 (Success)
+*/
+int my_pid(void)
+{
+pid_t pid;
+pid_t ppid;
+pid_t child_pid;
+child_pid = fork();
+pid = getpid();
+ppid = getppid();
+printf("----------------------------------\n");
+printf("Before fork: Process id is %d\n", pid);
+printf("Parent process id is %d\n", ppid);
+printf("----------------------------------\n");
+if (child_pid >= 0)
+{
+if (child_pid == 0)
+{
+printf("Child Process: %d\n", getpid());
+printf("Parent Process: %d\n", getppid());
+printf("----------------------------------\n");
+}
+else
+{
+printf("Parent Process: %d\n", getpid());
+printf("Child Process: %d\n", child_pid);
+printf("----------------------------------\n");
+}
+}
+else
+{
+printf("Fork failed!\n");
+return (1);
+}
+return (0);
+}

@@ -21,9 +21,9 @@ if (b[i] != '0' || b[i] != '1' || (b[i] != '1' && '0'))
 convert = strtol(b, NULL, 2);
 return (convert);
 }
+}
 else
 return (0);
-}
 }
 return (0);
 }

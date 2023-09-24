@@ -16,8 +16,8 @@ cp "$file_path" "$backup"
 # Remove leading and trailing spaces on each line
 sed -i 's/^[[:space:]]*//; s/[[:space:]]*$//' "$file_path"
 
-# Remove consecutive spaces
-# sed -i 's/[[:space:]]\{2,\}/ /g' "$file_path"
+# Remove consecutive spaces and replace with a single space
+sed -i 's/[[:space:]]\{2,\}/ /g' "$file_path"
 
 # Remove empty lines
 sed -i '/^$/d' "$file_path"

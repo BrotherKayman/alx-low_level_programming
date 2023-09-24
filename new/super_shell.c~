@@ -1,0 +1,55 @@
+#include "shell.h"
+/**
+* main - Entry point
+* @argc:
+* @argv
+*
+* Return: 0 on success
+*/
+int main(int argc, char **argv)
+{
+  
+char *ln = NULL;
+size_t size = 0;
+size_t len = 0;
+char *token = NULL;
+int i = 0;
+int j;
+ (void)argc;
+
+printf("> ");
+while (1)
+{
+if (getline(&ln, &size, stdin) == -1)
+{
+break;
+}
+len = strlen(ln);
+if (len > 0 && ln[len - 1] == '\n')
+{
+ln[len - 1] = '\0';
+}
+token = strtok(ln, " ");
+while (token != NULL)
+{
+printf("> %s\n", token);
+argv[i] = malloc(strlen(token) + 1);
+strcpy(argv[i], token);
+i++;
+token = strtok(NULL, " ");
+}
+ my_pid();
+if (strcmp(ln, "exit") == 0)
+{
+printf("Exiting Shell...\n");
+break;
+}
+printf("> ");
+}
+for (j = 0; j < i; j++)
+{
+free(argv[j]);
+}
+free(ln);
+return (0);
+}

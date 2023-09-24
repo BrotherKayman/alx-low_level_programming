@@ -1,0 +1,68 @@
+#include "shell.h"
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+/**
+* main - Entry point
+* @user_command: COmand from user
+* Return: Always 0 (Success)
+*/
+int my_pid(char *user_command)
+{
+  pid_t pid;
+  int status;
+    char *token;
+    int tokens = 0;
+    int i = 0;
+  pid = fork();
+  if (pid < 0)
+    {
+    perror("Fork failed");
+    exit(1);
+  }
+
+  if (pid == 0)
+    {
+   
+
+   
+    for (token = strtok(user_command, " "); token; token = strtok(NULL, " "))
+      {
+     tokens++;
+    }
+
+   
+    char **args = (char **)malloc((tokens + 1) * sizeof(char *));
+    if (args == NULL)
+      {
+      perror("Malloc failure");
+      exit(1);
+    }
+
+
+    for (token = strtok(user_command, " "); token; token = strtok(NULL, " "))
+      {
+      args[i] = token;
+      i++;
+    }
+    args[i] = NULL;
+
+    if (execvp(args[0], args) == -1)
+      {
+      perror("Exec failed");
+      exit(1);
+    }
+  }
+  else
+    {
+   
+    printf("Parent Process - PID: %d, Child PID: %d\n", getpid(), pid);
+    wait(&status);
+    if (WIFEXITED(status))
+      {
+      printf("Child process exited with status %d\n", WEXITSTATUS(status));
+    }
+  }
+
+  return (0);
+}

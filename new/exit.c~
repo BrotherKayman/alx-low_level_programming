@@ -1,0 +1,13 @@
+#include "shell.h"
+#include <stdlib.h>
+
+// Function to execute the "exit" command
+void main(int status)
+{
+  status = 98;
+  printf("Exiting Shell...\n");
+  sleep(1);
+  printf("Bye!!!\n");
+  exit(status);
+ }
+
