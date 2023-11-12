@@ -1,36 +1,35 @@
 #include "lists.h"
 /**
-* add_dnodeint_end - function
-* @head: double pointer to first node of list
-* @n: new node's data
+* add_dnodeint_end - Adds a new node at the end of a dlistint_t list.
+* @head: A pointer to a pointer to the head of the doubly linked list.
+* @n: The data to be stored in the new node.
 *
-* Description: function to add new node at end of dbl lnkd list
-* Return: address of new element, or NULL if fail
+* Return: Element address or NULL if it failed.
 */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *newNode;
-	dlistint_t *lastNode;
-	int num = n;
-
-	newNode = malloc(sizeof(dlistint_t));
-	if (newNode == NULL)
-		return (NULL);
-
-	newNode->n = num;
-	newNode->next = NULL;
-
-	if (*head == NULL)
-	{
-		newNode->prev = NULL;
-		*head = newNode;
-		return (newNode);
-	}
-	lastNode = *head;
-	while (lastNode->next != NULL)
-		lastNode = lastNode->next;
-	lastNode->next = newNode;
-	newNode->prev = lastNode;
-
-	return (newNode);
+dlistint_t *new_node, *to_free;
+if (head == NULL)
+{
+return (NULL);
+new_node = malloc(sizeof(dlistint_t));
+if (new_node == NULL)
+return (NULL);
+new_node->n = n;
+new_node->next = NULL;
+if (*head == NULL)
+{
+new_node->prev = NULL;
+*head = new_node;
+return (new_node);
+}
+to_free = *head;
+}
+while (to_free->next != NULL)
+{
+to_free = to_free->next;
+to_free->next = new_node;
+new_node->prev = to_free;
+}
+return (new_node);
 }
