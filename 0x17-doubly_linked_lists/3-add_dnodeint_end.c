@@ -1,6 +1,5 @@
 #include "lists.h"
-#include <stdlib.h>  // Include the necessary header for malloc
-
+#include <stdlib.h>
 /**
  * add_dnodeint_end - Adds a new node at the end of a dlistint_t list.
  * @head: A pointer to a pointer to the head of the doubly linked list.
