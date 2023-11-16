@@ -9,34 +9,44 @@
 
 /*--- Struct Definitions ---*/
 extern int push_arg;
+/* Global variable to represent the top of the stack */
+StackNode* top = NULL;
+
+/* Structure for stack node */
+typedef struct stack_node {
+    int data;
+    struct stack_node* next;
+} StackNode;
 
 /**
- * struct stack_s - Doubly linked list representation of a stack (or queue)
- * @n: Integer value stored in the node
- * @prev: Points to the previous element of the stack (or queue)
- * @next: Points to the next element of the stack (or queue)
+ * struct stack_s - doubly linked list representation of a stack (or queue)
+ * @n: integer
+ * @prev: points to the previous element of the stack (or queue)
+ * @next: points to the next element of the stack (or queue)
  *
- * Description: Doubly linked list node structure for stack, queues, LIFO, FIFO Holberton project
+ * Description: doubly linked list node structure
+ * for stack, queues, LIFO, FIFO
  */
 typedef struct stack_s
 {
-    int n;
-    struct stack_s *prev;
-    struct stack_s *next;
+        int n;
+        struct stack_s *prev;
+        struct stack_s *next;
 } stack_t;
 
 /**
- * struct instruction_s - Opcode and its corresponding function
- * @opcode: The opcode
- * @f: Function pointer to handle the opcode
+ * struct instruction_s - opcode and its function
+ * @opcode: the opcode
+ * @f: function to handle the opcode
  *
- * Description: Opcode and its function for stack, queues, LIFO, FIFO Holberton project
+ * Description: opcode and its function
+ * for stack, queues, LIFO, FIFO
  */
 typedef struct instruction_s
 {
-    char *opcode;
-    void (*f)(stack_t **stack, unsigned int line_number);
-} instruction_t;
+        char *opcode;
+        void (*f)(stack_t **stack, unsigned int line_number);
+} instruction_s;
 
 /**
  * struct global_variable - Opcode and its function
