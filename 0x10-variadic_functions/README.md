@@ -1,1 +1,0 @@
-Vardiadic functions
