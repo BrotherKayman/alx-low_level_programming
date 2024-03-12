@@ -9,11 +9,12 @@
   *         (-1) if the value is not present in the array or if the array is NULL.
   * Description: Prints each value in the array as it gets compared.
   */
+
 int linear_search(int *array, size_t size, int value)
 {
 	size_t i;
 
-	if (array == NULL)
+	if (!array || size == 0)
 		return (-1);
 
 	for (i = 0; i < size; i++)
