@@ -6,7 +6,7 @@
   * @size: Number of elements in the array.
   * @value: Value to search for.
   * Return: The index of the first occurrence of the value in the array.
-  *         (-1) if the value is not present in the array or if the array is NULL.
+  *         (-1) if the value is not or if the array is NULL.
   * Description: Prints each value in the array as it gets compared.
   */
 
