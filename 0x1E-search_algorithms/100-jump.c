@@ -11,30 +11,31 @@
 * Return: The index of the first occurrence of the value in the array.
 *         (-1) if the value is not present in the array or if array is NULL.
 */
-int jump_search(int *array, size_t size, int value)
-{
-int jump = (int)sqrt(size);
-int prev = 0;
-int i;
-if (array == NULL || size == 0)
-return (-1);
+#include <stdio.h>
+#include <math.h>
 
-printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
-while (array[jump] < value && jump < (int)size)
+int jump_search(int *array, size_t size, int value) 
 {
-prev = jump;
-jump += (int)sqrt(size);
-if (jump < (int)size)
-printf("Value checked array[%d] = [%d]\n", jump, array[jump]);
-}
+    int jump, prev, i;
 
-printf("Value found between indexes [%d] and [%d]\n", prev, jump);
-for (i = prev; i <= jump && i < (int)size; i++)
-{
-printf("Value checked array[%d] = [%d]\n", i, array[i]);
-if (array[i] == value)
-return (i);
-}
+    if (array == NULL || size == 0)
+        return (-1);
 
-return (-1);
+    jump = (int)sqrt(size);
+    prev = 0;
+
+    printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
+    while (prev + jump < (int)size && array[prev + jump] < value) {
+        prev += jump;
+        printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
+    }
+
+    printf("Value found between indexes [%d] and [%d]\n", prev, prev + jump);
+    for (i = prev; i <= prev + jump && i < (int)size; i++) {
+        printf("Value checked array[%d] = [%d]\n", i, array[i]);
+        if (array[i] == value)
+            return (i);
+    }
+
+    return (-1);
 }
