@@ -1,8 +1,7 @@
-#include <stdio.h>
-
+#include "search_algos"
 /**
-* interpolation_search - Searches for a value in a sorted array of integers
-*                        using the Interpolation search algorithm.
+* exponential_search - Searches for a value in a sorted array of integers
+*                      using the Exponential search algorithm.
 * @array: Pointer to the first element of the array to search in.
 * @size: Number of elements in the array.
 * @value: Value to search for.
@@ -10,30 +9,22 @@
 * Return: The index of the first occurrence of the value in the array.
 *         (-1) if the value is not present in the array or if array is NULL.
 */
-int interpolation_search(int *array, size_t size, int value)
+int exponential_search(int *array, size_t size, int value)
 {
-int min = 0;
-int max = size - 1;
-int i;
 if (array == NULL || size == 0)
-return (-1);
+return -1;
 
-while (min <= max && value >= array[min] && value <= array[max])
+if (array[0] == value)
+return 0;
+
+size_t track = 1;
+while (track < size && array[track] < value)
 {
-i = min + (((double)(max - min) / (array[max] - array[min]))
-* (value - array[min]));
-
-printf("Value checked array[%d] = [%d]\n", i, array[i]);
-
-if (array[i] == value)
-return (i);
-
-if (array[i] < value)
-min = i + 1;
-else
-max = i - 1;
+printf("Value checked array[%zu] = [%d]\n", track, array[track]);
+track *= 2;
 }
 
-printf("Value checked array[%d] is out of range\n", max);
-return (-1);
+printf("Value found between indexes [%zu] and [%zu]\n", track / 2, track >= size ? size - 1 : track);
+
+return binary_search(array, track / 2, track >= size ? size - 1 : track, value);
 }
