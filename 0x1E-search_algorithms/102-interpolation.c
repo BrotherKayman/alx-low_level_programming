@@ -30,6 +30,8 @@ min = i + 1;
 else
 max = i - 1;
 }
+if (min <= max)
+printf("Value checked array[%lu] is out of range\n", min);
 
 return (-1);
 }
