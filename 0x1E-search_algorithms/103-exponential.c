@@ -15,7 +15,6 @@ int min = 0;
 int max = size - 1;
 int mid;
 size_t i;
-
 if (array == NULL)
 {
 return (-1);
@@ -47,7 +46,6 @@ max = mid - 1;
 return (-1);
 }
 }
-
 /**
 * exponential_search - Searches for a value in a sorted array of integers
 *                      using the Exponential search algorithm.
